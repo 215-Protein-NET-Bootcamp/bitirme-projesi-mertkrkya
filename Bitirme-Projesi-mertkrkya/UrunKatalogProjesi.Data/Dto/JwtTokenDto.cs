@@ -5,7 +5,7 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UrunKatalogProjesi.Core.Dto
+namespace UrunKatalogProjesi.Data.Dto
 {
     public class JwtTokenDto
     {

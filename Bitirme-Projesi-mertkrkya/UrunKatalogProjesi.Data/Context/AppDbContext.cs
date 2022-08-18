@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using UrunKatalogProjesi.Core.Models;
 
@@ -15,6 +16,7 @@ namespace UrunKatalogProjesi.Data.Context
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+        public DbSet<AccountRefreshToken> AccountRefreshTokens { get; set; }
         public static void SetContextConnectionString(string connectionstring)
         {
             _connectionstring = connectionstring;
@@ -27,7 +29,12 @@ namespace UrunKatalogProjesi.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<AccountRefreshToken>(entity =>
+            {
+                entity.HasKey(r => r.UserId);
+                entity.ToTable("accountRefreshToken");
+            });
         }
     }
 }

@@ -14,6 +14,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UrunKatalogProjesi.API.Filters;
+using UrunKatalogProjesi.API.Middleware;
 using UrunKatalogProjesi.API.StartupExtensions;
 
 namespace UrunKatalogProjesi.API
@@ -30,9 +32,11 @@ namespace UrunKatalogProjesi.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddCustomizeSwagger();
+            services.AddControllers(options => options.Filters.Add(new ValidateFilter()));
             services.AddContextDependencyInjection(Configuration);
+            services.AddServicesDependencyInjection();
+            services.AddValidations();
+            services.AddCustomizeSwagger();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +48,8 @@ namespace UrunKatalogProjesi.API
             }
 
             app.UseHttpsRedirection();
+
+            app.CustomExceptionMiddleware();
 
             app.UseRouting();
 

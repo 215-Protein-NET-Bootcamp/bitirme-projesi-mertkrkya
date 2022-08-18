@@ -7,7 +7,7 @@ namespace UrunKatalogProjesi.Core.Entities
 {
     public class ResponseEntity
     {
-        private bool isSuccess { get; set; }
+        public bool isSuccess { get;}
         public string errorMessage { get; set; }
         public object data { get; set; }
         public ResponseEntity(object data)
