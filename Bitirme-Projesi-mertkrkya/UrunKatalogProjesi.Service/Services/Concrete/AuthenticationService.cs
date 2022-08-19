@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.Entities;
-using UrunKatalogProjesi.Core.Models;
-using UrunKatalogProjesi.Core.UnitofWork;
+using UrunKatalogProjesi.Data.Entities;
+using UrunKatalogProjesi.Data.Models;
+using UrunKatalogProjesi.Data.UnitofWork;
 using UrunKatalogProjesi.Data.Dto;
 using UrunKatalogProjesi.Data.Repositories;
 
@@ -14,7 +14,7 @@ namespace UrunKatalogProjesi.Service.Services
         private readonly IAccountRepository _accountRepository;
         private readonly ITokenService _tokenService;
         private readonly IUnitofWork _unitofWork;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<AppUser> userManager;
         private readonly IBaseRepository<AccountRefreshToken> _refreshTokenRepository;
         public AuthenticationService(ITokenService tokenService, IUnitofWork unitofWork, IBaseRepository<AccountRefreshToken> refreshTokenRepository,
             IAccountRepository accountRepository, UserManager<AppUser> userManager)
@@ -23,12 +23,12 @@ namespace UrunKatalogProjesi.Service.Services
             _unitofWork = unitofWork;
             _refreshTokenRepository = refreshTokenRepository;
             _accountRepository = accountRepository;
-            _userManager = userManager;
+            this.userManager = userManager;
         }
         public async Task<ResponseEntity> CreateTokenAsync(AppUser appUser)
         {
             if (appUser == null)
-                return new ResponseEntity("AppUser cannot be null.");
+                return new ResponseEntity("User cannot found");
             var token = _tokenService.CreateToken(appUser);
             var accountRefreshToken = await _refreshTokenRepository.Find(r => r.UserId == appUser.Id).FirstOrDefaultAsync();
             if (accountRefreshToken == null)

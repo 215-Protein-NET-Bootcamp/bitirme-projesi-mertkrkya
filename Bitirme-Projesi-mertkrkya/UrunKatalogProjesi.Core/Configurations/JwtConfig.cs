@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UrunKatalogProjesi.Core.Configurations
+namespace UrunKatalogProjesi.Data.Configurations
 {
     public class JwtConfig
     {

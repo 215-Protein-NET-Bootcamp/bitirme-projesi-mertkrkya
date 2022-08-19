@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.Entities;
-using UrunKatalogProjesi.Core.Models;
+using UrunKatalogProjesi.Data.Entities;
+using UrunKatalogProjesi.Data.Helper;
+using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Dto;
 using UrunKatalogProjesi.Service.Services;
+using UrunKatalogProjesi.BackgroundJob.Jobs;
 
 namespace UrunKatalogProjesi.API.Controllers
 {
@@ -15,11 +17,13 @@ namespace UrunKatalogProjesi.API.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IAuthenticationService _authenticationService;
-        public SecurityController(IAuthenticationService authenticationService, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        private readonly IAccountService _accountService;
+        public SecurityController(IAuthenticationService authenticationService, IAccountService accountService, UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _authenticationService = authenticationService;
             _userManager = userManager;
             _signInManager = signInManager;
+            _accountService = accountService;
         }
         [HttpPost]
         [Route("Login")]
@@ -27,15 +31,17 @@ namespace UrunKatalogProjesi.API.Controllers
         {
             if (ModelState.IsValid)
             {
+                var user = await _userManager.FindByNameAsync(loginRequest.UserName);
                 var loginResult = await _signInManager.PasswordSignInAsync(loginRequest.UserName, loginRequest.Password, false, false);
                 if (!loginResult.Succeeded)
                 {
-                    return BadRequest();
+                    var loginFailedProcessResult = await _accountService.LoginFailedProcess(user);
+                    return BadRequest(loginFailedProcessResult);
                 }
-                var user = await _userManager.FindByNameAsync(loginRequest.UserName);
                 var result = await _authenticationService.CreateTokenAsync(user);
                 if (!result.isSuccess)
                     return BadRequest(result);
+                await _userManager.ResetAccessFailedCountAsync(user);
                 return Ok(result);
             }
             return BadRequest(ModelState);
@@ -62,9 +68,10 @@ namespace UrunKatalogProjesi.API.Controllers
                     var result = await _authenticationService.CreateTokenAsync(user);
                     if (!result.isSuccess)
                         return BadRequest(result);
+                    FireAndForgetJobs.EmailSendJob(EmailTypes.Welcome, user);
                     return Ok(result);
                 }
-                return BadRequest(new ResponseEntity(registerUser.Errors)); //Düzenle
+                return BadRequest(new ResponseEntity(registerUser.Errors.ErrorToString()));
             }
             return BadRequest(ModelState);
 

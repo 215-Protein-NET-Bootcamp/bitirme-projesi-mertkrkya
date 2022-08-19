@@ -7,8 +7,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using UrunKatalogProjesi.Core.Configurations;
-using UrunKatalogProjesi.Core.Models;
+using UrunKatalogProjesi.Data.Configurations;
+using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Dto;
 
 namespace UrunKatalogProjesi.Service.Services
@@ -16,12 +16,12 @@ namespace UrunKatalogProjesi.Service.Services
     public class TokenService : ITokenService
     {
         private readonly JwtConfig _jwtConfig;
-        private readonly UserManager<AppUser> _userManager;
+        private readonly UserManager<AppUser> userManager;
 
         public TokenService(UserManager<AppUser> userManager, IOptions<JwtConfig> options)
         {
             _jwtConfig = options.Value;
-            _userManager = userManager;
+            this.userManager = userManager;
         }
 
         public JwtTokenDto CreateToken(AppUser appUser)

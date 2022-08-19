@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UrunKatalogProjesi.BackgroundJob\UrunKatalogProjesi.BackgroundJob.csproj" />
     <ProjectReference Include="..\UrunKatalogProjesi.Data\UrunKatalogProjesi.Data.csproj" />
   </ItemGroup>
 

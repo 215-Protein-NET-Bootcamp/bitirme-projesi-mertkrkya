@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using UrunKatalogProjesi.Core.Models;
+using UrunKatalogProjesi.Data.Models;
 
 namespace UrunKatalogProjesi.Data.Context
 {

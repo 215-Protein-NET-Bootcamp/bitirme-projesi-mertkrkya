@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UrunKatalogProjesi.Core.Entities
+namespace UrunKatalogProjesi.Data.Entities
 {
     public class Entity : CommonEntity
     {

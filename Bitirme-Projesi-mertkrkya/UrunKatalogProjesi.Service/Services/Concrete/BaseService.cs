@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
-using UrunKatalogProjesi.Core.Entities;
-using UrunKatalogProjesi.Core.UnitofWork;
+using UrunKatalogProjesi.Data.Entities;
+using UrunKatalogProjesi.Data.UnitofWork;
 using UrunKatalogProjesi.Data.Repositories;
 using UrunKatalogProjesi.Service.Exceptions;
 

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using UrunKatalogProjesi.Core.Models;
+using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Dto;
 
 namespace UrunKatalogProjesi.Service.Mapper

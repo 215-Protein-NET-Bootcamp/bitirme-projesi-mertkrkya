@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.UnitofWork;
+using UrunKatalogProjesi.Data.UnitofWork;
 using UrunKatalogProjesi.Data.Context;
 
 namespace JUrunKatalogProjesi.Core.UnitOfWorks

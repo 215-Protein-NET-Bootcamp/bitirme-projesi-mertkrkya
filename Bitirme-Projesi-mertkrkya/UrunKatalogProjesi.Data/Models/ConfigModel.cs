@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace UrunKatalogProjesi.Data.Models
 {
-    public class AccountRefreshToken
+    public class ConfigModel
     {
-        public string UserId { get; set; }
-        public string Code { get; set; }
-        public DateTime Expiration { get; set; }
     }
 }

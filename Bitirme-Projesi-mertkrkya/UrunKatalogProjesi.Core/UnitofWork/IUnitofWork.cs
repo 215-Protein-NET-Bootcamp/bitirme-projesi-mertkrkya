@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace UrunKatalogProjesi.Core.UnitofWork
+namespace UrunKatalogProjesi.Data.UnitofWork
 {
     public interface IUnitofWork
     {

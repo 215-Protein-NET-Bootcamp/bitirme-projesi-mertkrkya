@@ -10,7 +10,7 @@ using UrunKatalogProjesi.Data.Context;
 namespace UrunKatalogProjesi.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220818152025_initial")]
+    [Migration("20220818212636_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -179,6 +179,9 @@ namespace UrunKatalogProjesi.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("text");
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("timestamp without time zone");
+
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
@@ -197,6 +200,9 @@ namespace UrunKatalogProjesi.Data.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
@@ -227,6 +233,9 @@ namespace UrunKatalogProjesi.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("character varying(256)");
+
+                    b.Property<int>("UserStatus")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.Entities;
+using UrunKatalogProjesi.Data.Entities;
 
 namespace UrunKatalogProjesi.Service.Services
 {

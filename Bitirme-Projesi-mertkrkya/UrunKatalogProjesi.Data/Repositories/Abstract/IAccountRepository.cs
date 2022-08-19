@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.Entities;
-using UrunKatalogProjesi.Core.Models;
+using UrunKatalogProjesi.Data.Entities;
+using UrunKatalogProjesi.Data.Models;
 
 namespace UrunKatalogProjesi.Data.Repositories
 {

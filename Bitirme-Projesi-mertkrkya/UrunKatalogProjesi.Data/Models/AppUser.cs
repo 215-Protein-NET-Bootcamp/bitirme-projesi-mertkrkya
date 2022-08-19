@@ -1,16 +1,16 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UrunKatalogProjesi.Data.Entities;
 
-namespace UrunKatalogProjesi.Core.Models
+namespace UrunKatalogProjesi.Data.Models
 {
     public class AppUser : IdentityUser
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string TCKimlikNo { get; set; }
+        public UserStatuses UserStatus { get; set; } = UserStatuses.Active;
+        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        public DateTime? ModifiedDate { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using UrunKatalogProjesi.Core.Entities;
+using UrunKatalogProjesi.Data.Entities;
 using UrunKatalogProjesi.Service.Exceptions;
 
 namespace UrunKatalogProjesi.API.Middleware
