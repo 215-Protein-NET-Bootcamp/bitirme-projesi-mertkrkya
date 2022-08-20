@@ -9,6 +9,12 @@ namespace UrunKatalogProjesi.Service.Mapper
         public MappingProfile()
         {
             CreateMap<AppUser, AppUserDto>().ReverseMap();
+            CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Category, DetailCategoryDto>().ReverseMap();
+            CreateMap<Offer, OfferDto>().ReverseMap();
+            CreateMap<Product, ProductDto>().ReverseMap();
+            CreateMap<Product, DetailProductDto>().ReverseMap();
+
         }
     }
 }

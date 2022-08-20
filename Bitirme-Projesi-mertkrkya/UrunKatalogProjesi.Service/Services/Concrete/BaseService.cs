@@ -6,6 +6,10 @@ using UrunKatalogProjesi.Data.Entities;
 using UrunKatalogProjesi.Data.UnitofWork;
 using UrunKatalogProjesi.Data.Repositories;
 using UrunKatalogProjesi.Service.Exceptions;
+using Microsoft.AspNetCore.Identity;
+using UrunKatalogProjesi.Data.Models;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace UrunKatalogProjesi.Service.Services
 {
@@ -14,11 +18,13 @@ namespace UrunKatalogProjesi.Service.Services
         private readonly IBaseRepository<TEntity> _repository;
         private readonly IUnitofWork _unitofWork;
         protected readonly IMapper _mapper;
-        public BaseService(IBaseRepository<TEntity> repository, IUnitofWork unitofWork, IMapper mapper) : base()
+        private IHttpContextAccessor _httpContextAccessor;
+        public BaseService(IBaseRepository<TEntity> repository, IUnitofWork unitofWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base()
         {
             _repository = repository;
             _unitofWork = unitofWork;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
         }
         public virtual async Task<ResponseEntity> GetAllAsync()
         {
@@ -53,6 +59,13 @@ namespace UrunKatalogProjesi.Service.Services
             try
             {
                 var tempEntity = _mapper.Map<Dto, TEntity>(entity);
+                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
+                if(currentUser == null)
+                    return new ResponseEntity("User cannot be null");
+                var userId = currentUser.Value;
+                var property = tempEntity.GetType().GetProperty("CreatedBy");
+                if (property != null)
+                    property.SetValue(tempEntity, userId, null);
                 var result = _repository.InsertAsync(tempEntity);
                 await _unitofWork.CommitAsync();
                 return new ResponseEntity(entity);
@@ -73,6 +86,25 @@ namespace UrunKatalogProjesi.Service.Services
                     throw new ClientException("No Data");
                 }
                 var tempEntity = _mapper.Map<Dto, TEntity>(entity);
+                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
+                if (currentUser == null)
+                    return new ResponseEntity("User cannot be null");
+                var userId = currentUser.Value;
+                tempEntity.GetType().GetProperty("Id").SetValue(tempEntity, id);
+                var tempProperty = unUpdatedEntity.GetType().GetProperty("CreatedBy");
+                var tempPropertyDate = unUpdatedEntity.GetType().GetProperty("CreatedDate");
+                var property = tempEntity.GetType().GetProperty("ModifiedBy");
+                var propertyDate = tempEntity.GetType().GetProperty("ModifiedDate");
+                if (tempProperty != null && tempPropertyDate != null && property != null && propertyDate != null)
+                {
+                    var currentTime = DateTime.UtcNow;
+                    var createdUser = tempProperty.GetValue(unUpdatedEntity);
+                    var createdTime = tempPropertyDate.GetValue(unUpdatedEntity);
+                    tempEntity.GetType().GetProperty("CreatedBy").SetValue(tempEntity,createdUser);
+                    tempEntity.GetType().GetProperty("CreatedDate").SetValue(tempEntity, createdTime);
+                    property.SetValue(tempEntity, userId, null);
+                    propertyDate.SetValue(tempEntity, currentTime, null);
+                }
                 _repository.Update(tempEntity);
                 await _unitofWork.CommitAsync();
                 return new ResponseEntity(entity);

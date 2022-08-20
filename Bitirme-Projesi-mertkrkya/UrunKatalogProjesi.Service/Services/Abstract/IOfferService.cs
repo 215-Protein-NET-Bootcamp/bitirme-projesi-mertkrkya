@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UrunKatalogProjesi.Data.Models
+namespace UrunKatalogProjesi.Service.Services.Abstract
 {
-    public class ConfigModel
+    public interface IOfferService
     {
     }
 }

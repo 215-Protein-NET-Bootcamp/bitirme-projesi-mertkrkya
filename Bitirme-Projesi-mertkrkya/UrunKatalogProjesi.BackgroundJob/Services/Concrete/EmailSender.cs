@@ -14,11 +14,11 @@ namespace UrunKatalogProjesi.BackgroundJob.Services.Concrete
     public class EmailSender : IEmailSender
     {
         private readonly UserManager<AppUser> userManager;
-        private readonly UserOptionsConfig userOptionsConfig;
-        public EmailSender(UserManager<AppUser> userManager, IOptions<UserOptionsConfig> options)
+        private readonly EmailConfig emailConfig;
+        public EmailSender(UserManager<AppUser> userManager, IOptions<EmailConfig> options)
         {
             this.userManager = userManager;
-            userOptionsConfig = options.Value;
+            emailConfig = options.Value;
         }
         /// <summary>
         /// Burada mailData formatı Sold ve Unoffer durumları için kullanılmıştır.
@@ -31,12 +31,12 @@ namespace UrunKatalogProjesi.BackgroundJob.Services.Concrete
             {
                 MailMessage mailMessage = new MailMessage();
                 SmtpClient sc = new SmtpClient();
-                sc.Port = 587;
-                sc.Host = "smtp.office365.com";
+                sc.Port = emailConfig.EmailPort;
+                sc.Host = emailConfig.EmailHost;
                 sc.EnableSsl = true;
-                sc.Credentials = new NetworkCredential(userOptionsConfig.EmailAccount, userOptionsConfig.EmailPassword);
+                sc.Credentials = new NetworkCredential(emailConfig.EmailAccount, emailConfig.EmailPassword);
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress(userOptionsConfig.EmailAccount, "Urun Katalog Projesi Ekibi");
+                mail.From = new MailAddress(emailConfig.EmailAccount, emailConfig.EmailDisplayName);
                 mail.To.Add(appUser.Email);
                 string subject = "";
                 var body = GenerateEmailTemplate(emailType, appUser.UserName, out subject);

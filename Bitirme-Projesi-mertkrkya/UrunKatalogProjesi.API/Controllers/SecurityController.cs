@@ -31,18 +31,16 @@ namespace UrunKatalogProjesi.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByNameAsync(loginRequest.UserName);
-                var loginResult = await _signInManager.PasswordSignInAsync(loginRequest.UserName, loginRequest.Password, false, false);
-                if (!loginResult.Succeeded)
-                {
-                    var loginFailedProcessResult = await _accountService.LoginFailedProcess(user);
-                    return BadRequest(loginFailedProcessResult);
-                }
-                var result = await _authenticationService.CreateTokenAsync(user);
+                var result = await _accountService.LoginProcess(loginRequest);
                 if (!result.isSuccess)
+                {
                     return BadRequest(result);
-                await _userManager.ResetAccessFailedCountAsync(user);
-                return Ok(result);
+                }
+                var appUser = (AppUser)result.data;
+                var tokenResult = await _authenticationService.CreateTokenAsync(appUser);
+                if (!tokenResult.isSuccess)
+                    return BadRequest(tokenResult);
+                return Ok(tokenResult);
             }
             return BadRequest(ModelState);
         }

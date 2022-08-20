@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System;
 using System.Linq;
+using UrunKatalogProjesi.API.Filters;
 
 namespace UrunKatalogProjesi.API.StartupExtensions
 {
@@ -19,6 +20,7 @@ namespace UrunKatalogProjesi.API.StartupExtensions
                     Version = "V1",
                     Title = "Urun Katalog API",
                 });
+                gen.OperationFilter<SwaggerFileOperationFilter>();
                 var securityScheme = new OpenApiSecurityScheme
                 {
                     Name = "Protein Management for IT Company",

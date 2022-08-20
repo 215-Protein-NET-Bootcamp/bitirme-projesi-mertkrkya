@@ -22,11 +22,12 @@ namespace UrunKatalogProjesi.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(options => options.Filters.Add(new ValidateFilter()));
+            services.AddControllers(options => options.Filters.Add(new ValidateFilter())).AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddContextDependencyInjection(Configuration);
             services.AddServicesDependencyInjection();
             services.AddValidations();
             services.AddCustomizeSwagger();
+            ExtensionService.CheckFileDirectories(Configuration); //Sunucu her ayaða kalktýðý zaman dosyalarýn varlýðýný kontrol eder. Dosyalar yoksa oluþturur.
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

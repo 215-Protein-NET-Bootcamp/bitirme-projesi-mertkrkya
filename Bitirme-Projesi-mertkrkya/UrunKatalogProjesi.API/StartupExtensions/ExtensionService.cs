@@ -16,9 +16,13 @@ using UrunKatalogProjesi.Data.Configurations;
 using UrunKatalogProjesi.Data.Context;
 using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Repositories;
+using UrunKatalogProjesi.Data.Repositories.Abstract;
+using UrunKatalogProjesi.Data.Repositories.Concrete;
 using UrunKatalogProjesi.Data.UnitofWork;
 using UrunKatalogProjesi.Service.Mapper;
 using UrunKatalogProjesi.Service.Services;
+using UrunKatalogProjesi.Service.Services.Abstract;
+using UrunKatalogProjesi.Service.Services.Concrete;
 
 namespace UrunKatalogProjesi.API.StartupExtensions
 {
@@ -36,10 +40,13 @@ namespace UrunKatalogProjesi.API.StartupExtensions
             }));
 
             services.AddDbContext<AppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ConfigDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddHangfire(config => config.UsePostgreSqlStorage(Configuration.GetConnectionString("DefaultConnection")));
             AppDbContext.SetContextConnectionString(Configuration.GetConnectionString("DefaultConnection"));
+            ConfigDbContext.SetContextConnectionString(Configuration.GetConnectionString("DefaultConnection"));
             services.Configure<JwtConfig>(Configuration.GetSection("JwtConfig"));
-            services.Configure<UserOptionsConfig>(Configuration.GetSection("UserOptionsConfig"));
+            services.Configure<SystemOptionConfig>(Configuration.GetSection("SystemOptionConfig"));
+            services.Configure<EmailConfig>(Configuration.GetSection("EmailConfig"));
             // identity
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddHangfireServer();
@@ -83,6 +90,13 @@ namespace UrunKatalogProjesi.API.StartupExtensions
             // add service
             services.AddScoped<IEmailSender, EmailSender>();
             services.AddScoped<IAccountRepository, AccountRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOfferRepository, OfferRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped(typeof(IConfigRepository<>), typeof(ConfigRepository<>));
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IManagementService, ManagementService>();
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<ITokenService, TokenService>();
@@ -96,6 +110,15 @@ namespace UrunKatalogProjesi.API.StartupExtensions
             });
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
+        }
+        public static void CheckFileDirectories(IConfiguration Configuration)
+        {
+            var logDirectory = Configuration.GetSection("SystemOptionConfig").GetValue<string>("LogFileDirectory");
+            var importPhotoDirectory = Configuration.GetSection("SystemOptionConfig").GetValue<string>("ImportPhotoDirectory");
+            if (!System.IO.Directory.Exists(logDirectory))
+                System.IO.Directory.CreateDirectory(logDirectory);
+            if (!System.IO.Directory.Exists(importPhotoDirectory))
+                System.IO.Directory.CreateDirectory(importPhotoDirectory);
         }
     }
 }

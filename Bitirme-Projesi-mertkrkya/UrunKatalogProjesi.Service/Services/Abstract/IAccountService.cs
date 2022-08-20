@@ -10,6 +10,6 @@ namespace UrunKatalogProjesi.Service.Services
 {
     public interface IAccountService : IBaseService<AppUserDto,AppUser>
     {
-        Task<ResponseEntity> LoginFailedProcess(AppUser appUser);
+        Task<ResponseEntity> LoginProcess(LoginRequest loginRequest);
     }
 }

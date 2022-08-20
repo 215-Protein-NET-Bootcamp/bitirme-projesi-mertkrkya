@@ -18,12 +18,11 @@ namespace UrunKatalogProjesi.Service.Validations
             RuleFor(r => r.UserName)
                 .NotNull().WithMessage("UserName cannot be null.")
                 .NotEmpty().WithMessage("UserName cannot be empty.");
-            
+
 
             RuleFor(r => r.Password)
                 .NotNull().WithMessage("Password cannot be null.")
-                .NotEmpty().WithMessage("Password cannot be empty.")
-                .Length(8, 20).WithMessage("Password length must be between 8 to 20 char long.");
+                .NotEmpty().WithMessage("Password cannot be empty.");
         }
     }
 }

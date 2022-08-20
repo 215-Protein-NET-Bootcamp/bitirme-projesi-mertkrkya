@@ -3,20 +3,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
 using System.Threading.Tasks;
 using UrunKatalogProjesi.Data.Context;
+using UrunKatalogProjesi.Data.Models;
+using UrunKatalogProjesi.Data.Repositories.Abstract;
 
-namespace UrunKatalogProjesi.Data.Repositories
+namespace UrunKatalogProjesi.Data.Repositories.Concrete
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class ConfigRepository<TEntity> : IConfigRepository<TEntity> where TEntity : class 
     {
-        protected readonly AppDbContext _appDbContext;
+        protected readonly ConfigDbContext _configDbContext;
         private readonly DbSet<TEntity> _dbSet;
-
-        public BaseRepository(AppDbContext appDbContext)
+        public ConfigRepository(ConfigDbContext configDbContext)
         {
-            _appDbContext = appDbContext;
-            _dbSet = appDbContext.Set<TEntity>(); //Context'ten set edilir.
+            _configDbContext = configDbContext;
+            _dbSet = _configDbContext.Set<TEntity>();
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
@@ -29,11 +31,11 @@ namespace UrunKatalogProjesi.Data.Repositories
             return _dbSet.Where(expression);
         }
 
-        public async virtual Task<TEntity> GetByIdAsync(int id)
+        public async Task<TEntity> GetByIdAsync(string id)
         {
             var result = await _dbSet.FindAsync(id);
             if (result != null)
-                _appDbContext.Entry(result).State = EntityState.Detached;
+                _configDbContext.Entry(result).State = EntityState.Detached;
             return result;
         }
 

@@ -19,6 +19,9 @@ namespace UrunKatalogProjesi.API.StartupExtensions
             });
             services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<RegisterValidation>());
             services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<LoginValidation>());
+            services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<CategoryValidation>());
+            //services.AddFluentValidation(x => x.RegisterValidatorsFromAssemblyContaining<ProductValidation>());
+
         }
     }
 }
