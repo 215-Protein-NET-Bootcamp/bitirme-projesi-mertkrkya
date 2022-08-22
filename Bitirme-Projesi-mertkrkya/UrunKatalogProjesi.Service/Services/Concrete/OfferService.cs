@@ -50,14 +50,19 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
                     offer.OfferPrice = (offer.OfferPercent * product.Price) / 100;
                 var currentUser = _httpContextAccessor.HttpContext.User;
                 var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
+                var offerExist = _offerRepository.Find(r => r.ProductId == offer.ProductId && r.OfferUserId == userId).FirstOrDefault();
+                if (offerExist != null)
+                    return new ResponseEntity("You already have an offer for this product.");
                 if (product.OwnerId == userId)
-                    return new ResponseEntity("The user already owns the product.");
+                    return new ResponseEntity("The user already owns this product.");
                 var offerEntity = _mapper.Map<InsertOfferDto, Offer>(offer);
+                offerEntity.OfferStatus = OfferStatuses.Wait;
                 offerEntity.OfferUserId = userId;
                 offerEntity.CreatedBy = userId;
                 await _offerRepository.InsertAsync(offerEntity);
                 await _unitofWork.CommitAsync();
-                return new ResponseEntity(offerEntity);
+                var mapOffer = _mapper.Map<Offer, OfferDto>(offerEntity);
+                return new ResponseEntity(mapOffer);
             }
             catch (Exception e)
             {
@@ -152,7 +157,8 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
                 dbOffer.ModifiedDate = currentTime;
                 _offerRepository.Update(dbOffer);
                 _unitofWork.Commit();
-                return new ResponseEntity(dbOffer);
+                var mapOffer = _mapper.Map<Offer, OfferDto>(dbOffer);
+                return new ResponseEntity(mapOffer);
             }
             catch (Exception e)
             {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Threading.Tasks;
 using UrunKatalogProjesi.Service.Services.Abstract;
 
@@ -23,10 +24,10 @@ namespace UrunKatalogProjesi.API.Controllers
 
             if (!result.isSuccess)
                 return BadRequest(result);
-
+            Log.Information($"{User.Identity?.Name} is image upload.");
             return Ok(result);
         }
-        [HttpPost("GetAllConfigData")]
+        [HttpGet("GetAllConfigData")]
         public async Task<IActionResult> GetAllConfigData()
         {
             var result = await _managementService.GetAllConfigData();

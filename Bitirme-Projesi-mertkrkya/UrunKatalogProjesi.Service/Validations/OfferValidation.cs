@@ -22,8 +22,7 @@ namespace UrunKatalogProjesi.Service.Validations
                       return false;
                   return true;
               }).WithMessage("OfferPercent or OfferPrice must be entered");
-            RuleFor(r => r.OfferPercent)
-                .InclusiveBetween(1, 100).WithMessage($"OfferPercent must be between 1 to 100");
+            RuleFor(r => r.OfferPercent).GreaterThanOrEqualTo(0).WithMessage($"OfferPercent must be between 1 to 100");
             RuleFor(r => r.ProductId).Must(m =>
             {
                 if (_productRepository.GetByIdAsync(m).GetAwaiter().GetResult() == null)
@@ -40,7 +39,6 @@ namespace UrunKatalogProjesi.Service.Validations
                 }
                 return true;
             }).WithMessage($"OfferPrice cannot higher than product price.");
-            RuleFor(r => r.OfferStatus).IsInEnum().WithMessage("This offer status is not exist");
         }
     }
     public class BuyOfferValidation : AbstractValidator<BuyOfferDto>

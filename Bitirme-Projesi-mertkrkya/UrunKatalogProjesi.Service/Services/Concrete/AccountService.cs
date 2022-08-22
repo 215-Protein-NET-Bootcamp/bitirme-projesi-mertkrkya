@@ -170,7 +170,7 @@ namespace UrunKatalogProjesi.Service.Services
                 result.currentPage = pageNum;
                 return new ResponseEntity(result);
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw new Exception("GetMyOffers Error.");
             }

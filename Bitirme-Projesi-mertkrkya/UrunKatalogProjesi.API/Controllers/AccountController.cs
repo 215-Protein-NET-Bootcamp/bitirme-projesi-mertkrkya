@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace UrunKatalogProjesi.API.Controllers
                 {
                     return BadRequest(result);
                 }
+                Log.Information($"{User.Identity?.Name} is accept offer. Offer ID: {offerId}.");
                 return Ok(result);
             }
             return BadRequest(ModelState);
@@ -46,6 +48,7 @@ namespace UrunKatalogProjesi.API.Controllers
                 {
                     return BadRequest(result);
                 }
+                Log.Information($"{User.Identity?.Name} is reject offer. Offer ID: {offerId}.");
                 return Ok(result);
             }
             return BadRequest(ModelState);

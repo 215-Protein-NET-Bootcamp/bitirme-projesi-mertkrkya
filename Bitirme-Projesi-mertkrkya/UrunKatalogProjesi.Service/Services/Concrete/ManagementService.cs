@@ -3,17 +3,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using UrunKatalogProjesi.Data.Configurations;
 using UrunKatalogProjesi.Data.Dto;
 using UrunKatalogProjesi.Data.Entities;
 using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Repositories.Abstract;
-using UrunKatalogProjesi.Data.Repositories.Concrete;
 using UrunKatalogProjesi.Service.Services.Abstract;
 using UrunKatalogProjesi.Service.Validations;
 
@@ -65,14 +62,14 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
             configModels.CategoryStatuses = categoryStatuses;
             configModels.ProductStatuses = productStatuses;
             configModels.OfferStatuses = offerStatuses;
-            configModels.Brand = _brandConfigRepository.GetAllAsync().GetAwaiter().GetResult().Cast<GenericConfigModel>().ToList();
-            configModels.Color = _colorConfigRepository.GetAllAsync().GetAwaiter().GetResult().Cast<GenericConfigModel>().ToList();
+            configModels.Brand = await _brandConfigRepository.GetAllAsync();
+            configModels.Color = await _colorConfigRepository.GetAllAsync();
             return new ResponseEntity(configModels);
         }
 
         public async Task<ResponseEntity> UploadPhoto([FromForm] IFormFile image)
         {
-            int maxFileSize = Convert.ToInt32(userOptionsConfig.MaxFileKbSize); //Değiştir.
+            int maxFileSize = Convert.ToInt32(userOptionsConfig.MaxFileKbSize);
             var validateResult = FileValidation.ImageValidation(image, maxFileSize);
             if (!string.IsNullOrWhiteSpace(validateResult))
                 return new ResponseEntity(validateResult);

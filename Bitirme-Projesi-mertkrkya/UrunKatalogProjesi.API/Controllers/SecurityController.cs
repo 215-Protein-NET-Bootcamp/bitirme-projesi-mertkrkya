@@ -33,7 +33,6 @@ namespace UrunKatalogProjesi.API.Controllers
         {
             if (ModelState.IsValid)
             {
-                Log.Information("Giris yapti.");
                 var result = await _accountService.LoginProcess(loginRequest);
                 if (!result.isSuccess)
                 {
@@ -43,6 +42,7 @@ namespace UrunKatalogProjesi.API.Controllers
                 var tokenResult = await _authenticationService.CreateTokenAsync(appUser);
                 if (!tokenResult.isSuccess)
                     return BadRequest(tokenResult);
+                Log.Information($"{User.Identity?.Name} is login.");
                 return Ok(tokenResult);
             }
             return BadRequest(ModelState);

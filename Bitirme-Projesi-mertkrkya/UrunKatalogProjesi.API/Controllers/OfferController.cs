@@ -49,11 +49,11 @@ namespace UrunKatalogProjesi.API.Controllers
         }
         [HttpPut]
         [Route("CancelOffer")]
-        public async Task<IActionResult> CancelOffer(int id)
+        public async Task<IActionResult> CancelOffer(int offerId)
         {
             if (ModelState.IsValid)
             {
-                var result = await _offerService.CancelOffer(id);
+                var result = await _offerService.CancelOffer(offerId);
                 if (!result.isSuccess)
                 {
                     return BadRequest(result);
@@ -64,11 +64,11 @@ namespace UrunKatalogProjesi.API.Controllers
         }
         [HttpPut]
         [Route("UpdateOffer")]
-        public async Task<IActionResult> UpdateOffer(int id, InsertOfferDto offer)
+        public async Task<IActionResult> UpdateOffer(int offerId, InsertOfferDto offer)
         {
             if (ModelState.IsValid)
             {
-                var result = await _offerService.UpdateOffer(id, offer);
+                var result = await _offerService.UpdateOffer(offerId, offer);
                 if (!result.isSuccess)
                 {
                     return BadRequest(result);

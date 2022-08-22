@@ -94,7 +94,8 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
                 tempEntity.ModifiedDate = currentTime;
                 _productRepository.Update(tempEntity);
                 await _unitofWork.CommitAsync();
-                return new ResponseEntity(entity);
+                var mapEntity = _mapper.Map<Product, ProductDto>(tempEntity);
+                return new ResponseEntity(mapEntity);
             }
             catch (Exception e)
             {

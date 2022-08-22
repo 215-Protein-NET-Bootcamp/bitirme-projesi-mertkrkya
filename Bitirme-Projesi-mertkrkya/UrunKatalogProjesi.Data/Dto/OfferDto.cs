@@ -19,7 +19,6 @@ namespace UrunKatalogProjesi.Data.Dto
     public class InsertOfferDto //Insert ve Update işlemlerinde bu kullanılacak.
     {
         public int ProductId { get; set; }
-        public OfferStatuses OfferStatus { get; set; } = OfferStatuses.Wait;
         public decimal OfferPrice { get; set; } //Fiyat belirtme için.
         public decimal OfferPercent { get; set; } //Yüzdelik için.
     }
