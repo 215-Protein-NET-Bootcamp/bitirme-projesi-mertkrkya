@@ -11,5 +11,11 @@ namespace UrunKatalogProjesi.Service.Services
     public interface IAccountService : IBaseService<AppUserDto,AppUser>
     {
         Task<ResponseEntity> LoginProcess(LoginRequest loginRequest);
+        Task<ResponseEntity> GetMyOffers(string key, int pageNum, int pageSize);
+        Task<ResponseEntity> GetMyProducts(string key, int pageNum, int pageSize);
+        Task<ResponseEntity> GetMyProductOffers();
+        Task<ResponseEntity> AcceptOffer(int offerId);
+        Task<ResponseEntity> RejectOffer(int offerId);
+
     }
 }

@@ -1,14 +1,10 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
 using UrunKatalogProjesi.Data.Entities;
 using UrunKatalogProjesi.Service.Exceptions;
+using Serilog;
 
 namespace UrunKatalogProjesi.API.Middleware
 {
@@ -27,6 +23,10 @@ namespace UrunKatalogProjesi.API.Middleware
                         ClientException => 400,
                         _ => 500
                     };
+                    if (statusCode == 400)
+                        Log.Information(exceptionFeature.Error.Message);
+                    else
+                        Log.Error(exceptionFeature.Error.Message);
                     context.Response.StatusCode = statusCode;
                     var response = new ResponseEntity(errorMessage: exceptionFeature.Error.Message);
                     await context.Response.WriteAsync(JsonSerializer.Serialize(response));

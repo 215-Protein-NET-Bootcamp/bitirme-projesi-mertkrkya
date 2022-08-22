@@ -26,5 +26,15 @@ namespace UrunKatalogProjesi.API.Controllers
 
             return Ok(result);
         }
+        [HttpPost("GetAllConfigData")]
+        public async Task<IActionResult> GetAllConfigData()
+        {
+            var result = await _managementService.GetAllConfigData();
+
+            if (!result.isSuccess)
+                return BadRequest(result);
+
+            return Ok(result);
+        }
     }
 }

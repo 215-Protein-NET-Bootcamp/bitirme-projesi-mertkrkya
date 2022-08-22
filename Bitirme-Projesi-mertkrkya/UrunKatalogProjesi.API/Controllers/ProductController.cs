@@ -21,22 +21,34 @@ namespace UrunKatalogProjesi.API.Controllers
         [HttpGet("{id:int}")]
         public new async Task<IActionResult> GetByIdAsync(int id)
         {
-            var result = await _productService.GetByIdAsync(id);
+            if(ModelState.IsValid)
+            {
+                var result = await _productService.GetByIdAsync(id);
 
-            if (!result.isSuccess)
-                return BadRequest(result);
+                if (!result.isSuccess)
+                    return BadRequest(result);
 
-            return Ok(result);
+                return Ok(result);
+            }
+            return BadRequest(ModelState);
         }
         [HttpPost]
         public new async Task<IActionResult> CreateAsync([FromBody] ProductDto product)
         {
-            return await base.CreateAsync(product);
+            if(ModelState.IsValid)
+            {
+                return await base.CreateAsync(product);
+            }
+            return BadRequest(ModelState);
         }
         [HttpPut("{id:int}")]
         public new async Task<IActionResult> UpdateAsync(int id, [FromBody] ProductDto product)
         {
-            return await base.UpdateAsync(id, product);
+            if (ModelState.IsValid)
+            {
+                return await base.UpdateAsync(id, product);
+            }
+            return BadRequest(ModelState);
         }
     }
 }

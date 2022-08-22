@@ -1,0 +1,298 @@
+2022-08-22 00:31:24.768 +03:00 [INF] Application is starting.
+2022-08-22 00:31:27.878 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 00:31:28.831 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 00:31:28.848 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 00:31:28.935 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 00:31:28.935 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 00:31:28.943 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 00:31:28.943 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 00:31:28.943 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 00:31:29.422 +03:00 [INF] Server laptop-3ma4iguv:2932:13784478 successfully announced in 433,9869 ms
+2022-08-22 00:31:29.429 +03:00 [INF] Server laptop-3ma4iguv:2932:13784478 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 00:31:29.451 +03:00 [INF] 3 servers were removed due to timeout
+2022-08-22 00:31:29.824 +03:00 [INF] Server laptop-3ma4iguv:2932:13784478 all the dispatchers started
+2022-08-22 00:31:30.058 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 00:31:30.058 +03:00 [INF] Hosting environment: Development
+2022-08-22 00:31:30.058 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 00:31:30.101 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 00:31:30.570 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 469.3018ms
+2022-08-22 00:31:30.721 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 00:31:30.834 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 112.6190ms
+2022-08-22 01:27:09.306 +03:00 [INF] Application is starting.
+2022-08-22 01:27:13.060 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:27:14.159 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:27:14.175 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:27:14.267 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:27:14.268 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:27:14.268 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:27:14.268 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:27:14.268 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:27:14.834 +03:00 [INF] Server laptop-3ma4iguv:42276:10c09584 successfully announced in 514,9301 ms
+2022-08-22 01:27:14.840 +03:00 [INF] Server laptop-3ma4iguv:42276:10c09584 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:27:14.863 +03:00 [INF] 1 servers were removed due to timeout
+2022-08-22 01:27:15.217 +03:00 [INF] Server laptop-3ma4iguv:42276:10c09584 all the dispatchers started
+2022-08-22 01:27:15.511 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:27:15.512 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:27:15.512 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:27:15.560 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:27:16.112 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 551.5944ms
+2022-08-22 01:27:16.300 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:27:16.405 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 104.9944ms
+2022-08-22 01:28:06.796 +03:00 [INF] Application is starting.
+2022-08-22 01:28:07.832 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:28:08.467 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:28:08.487 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:28:08.555 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:28:08.555 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:28:08.556 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:28:08.556 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:28:08.556 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:28:08.957 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:28:08.962 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:28:08.962 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:28:08.992 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:28:08.999 +03:00 [INF] Server laptop-3ma4iguv:27980:d2d714cf successfully announced in 374,0197 ms
+2022-08-22 01:28:09.006 +03:00 [INF] Server laptop-3ma4iguv:27980:d2d714cf is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:28:09.453 +03:00 [INF] Server laptop-3ma4iguv:27980:d2d714cf all the dispatchers started
+2022-08-22 01:28:09.605 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 613.8752ms
+2022-08-22 01:28:09.855 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:28:09.993 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 137.8406ms
+2022-08-22 01:28:26.849 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44300/api/Security/Login application/json-patch+json 48
+2022-08-22 01:28:26.858 +03:00 [INF] Executing endpoint 'UrunKatalogProjesi.API.Controllers.SecurityController.Login (UrunKatalogProjesi.API)'
+2022-08-22 01:28:26.895 +03:00 [INF] Route matched with {action = "Login", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(UrunKatalogProjesi.Data.Entities.LoginRequest) on controller UrunKatalogProjesi.API.Controllers.SecurityController (UrunKatalogProjesi.API).
+2022-08-22 01:28:27.846 +03:00 [INF] Entity Framework Core 5.0.17 initialized 'AppDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-08-22 01:28:27.981 +03:00 [INF] Giris yapti.
+2022-08-22 01:28:28.306 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CreatedDate", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."ModifiedDate", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TCKimlikNo", a."TwoFactorEnabled", a."UserName", a."UserStatus"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2022-08-22 01:28:28.400 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."AccessFailedCount", a."ConcurrencyStamp", a."CreatedDate", a."Email", a."EmailConfirmed", a."FirstName", a."LastName", a."LockoutEnabled", a."LockoutEnd", a."ModifiedDate", a."NormalizedEmail", a."NormalizedUserName", a."PasswordHash", a."PhoneNumber", a."PhoneNumberConfirmed", a."SecurityStamp", a."TCKimlikNo", a."TwoFactorEnabled", a."UserName", a."UserStatus"
+FROM "AspNetUsers" AS a
+WHERE a."NormalizedUserName" = @__normalizedUserName_0
+LIMIT 1
+2022-08-22 01:28:28.502 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__user_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ClaimType", a."ClaimValue", a."UserId"
+FROM "AspNetUserClaims" AS a
+WHERE a."UserId" = @__user_Id_0
+2022-08-22 01:28:28.533 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a0."Name"
+FROM "AspNetUserRoles" AS a
+INNER JOIN "AspNetRoles" AS a0 ON a."RoleId" = a0."Id"
+WHERE a."UserId" = @__userId_0
+2022-08-22 01:28:28.553 +03:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2022-08-22 01:28:28.743 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__appUser_Id_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT a."UserId", a."Code", a."Expiration"
+FROM "accountRefreshToken" AS a
+WHERE a."UserId" = @__appUser_Id_0
+LIMIT 1
+2022-08-22 01:28:28.827 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p2='?', @p0='?', @p1='?' (DbType = DateTime)], CommandType='"Text"', CommandTimeout='30']
+UPDATE "accountRefreshToken" SET "Code" = @p0, "Expiration" = @p1
+WHERE "UserId" = @p2;
+2022-08-22 01:28:28.861 +03:00 [INF] Executing OkObjectResult, writing value of type 'UrunKatalogProjesi.Data.Entities.ResponseEntity'.
+2022-08-22 01:28:28.878 +03:00 [INF] Executed action UrunKatalogProjesi.API.Controllers.SecurityController.Login (UrunKatalogProjesi.API) in 1979.4875ms
+2022-08-22 01:28:28.878 +03:00 [INF] Executed endpoint 'UrunKatalogProjesi.API.Controllers.SecurityController.Login (UrunKatalogProjesi.API)'
+2022-08-22 01:28:28.883 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44300/api/Security/Login application/json-patch+json 48 - 200 982 application/json;+charset=utf-8 2034.0150ms
+2022-08-22 01:28:43.040 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0
+2022-08-22 01:28:43.093 +03:00 [INF] Successfully validated the token.
+2022-08-22 01:28:43.097 +03:00 [INF] Authorization was successful.
+2022-08-22 01:28:43.098 +03:00 [INF] Executing endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:28:43.100 +03:00 [INF] Route matched with {action = "GetAllConfigData", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllConfigData() on controller UrunKatalogProjesi.API.Controllers.ManagementController (UrunKatalogProjesi.API).
+2022-08-22 01:28:43.130 +03:00 [INF] Entity Framework Core 5.0.17 initialized 'ConfigDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-08-22 01:28:48.110 +03:00 [INF] Executed action UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API) in 5009.7891ms
+2022-08-22 01:28:48.117 +03:00 [INF] Executed endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:28:48.125 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'UrunKatalogProjesi.Data.Entities.UserStatuses' to type 'UrunKatalogProjesi.Data.Models.GenericConfigModel'.
+   at System.Linq.Enumerable.CastIterator[TResult](IEnumerable source)+MoveNext()
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.ToList()
+   at UrunKatalogProjesi.Service.Services.Concrete.ManagementService.GetAllConfigData() in C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.Service\Services\Concrete\ManagementService.cs:line 39
+   at UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData() in C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API\Controllers\ManagementController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationMiddlewareResultHandler.HandleAsync(RequestDelegate next, HttpContext context, AuthorizationPolicy policy, PolicyAuthorizationResult authorizeResult)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-08-22 01:28:51.015 +03:00 [ERR] Unable to cast object of type 'UrunKatalogProjesi.Data.Entities.UserStatuses' to type 'UrunKatalogProjesi.Data.Models.GenericConfigModel'.
+2022-08-22 01:28:51.021 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0 - 500 - application/json 7980.9993ms
+2022-08-22 01:36:14.189 +03:00 [INF] Application is starting.
+2022-08-22 01:36:15.471 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:36:16.148 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:36:16.165 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:36:16.232 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:36:16.233 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:36:16.233 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:36:16.233 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:36:16.233 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:36:16.585 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:36:16.588 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:36:16.588 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:36:16.609 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:36:16.621 +03:00 [INF] Server laptop-3ma4iguv:31160:0c281f85 successfully announced in 359,7074 ms
+2022-08-22 01:36:16.629 +03:00 [INF] Server laptop-3ma4iguv:31160:0c281f85 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:36:16.640 +03:00 [INF] 2 servers were removed due to timeout
+2022-08-22 01:36:16.998 +03:00 [INF] Server laptop-3ma4iguv:31160:0c281f85 all the dispatchers started
+2022-08-22 01:36:17.207 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 597.4674ms
+2022-08-22 01:36:17.389 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:36:17.514 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 124.6037ms
+2022-08-22 01:36:52.097 +03:00 [INF] Application is starting.
+2022-08-22 01:36:53.249 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:36:53.820 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:36:53.839 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:36:53.900 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:36:53.901 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:36:53.901 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:36:53.901 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:36:53.901 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:36:54.236 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:36:54.239 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:36:54.239 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:36:54.264 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:36:54.276 +03:00 [INF] Server laptop-3ma4iguv:17600:085fced3 successfully announced in 350,8249 ms
+2022-08-22 01:36:54.283 +03:00 [INF] Server laptop-3ma4iguv:17600:085fced3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:36:54.694 +03:00 [INF] Server laptop-3ma4iguv:17600:085fced3 all the dispatchers started
+2022-08-22 01:36:54.894 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 630.2006ms
+2022-08-22 01:36:55.053 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:36:55.185 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 131.9547ms
+2022-08-22 01:36:59.343 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0
+2022-08-22 01:36:59.350 +03:00 [INF] Executing endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:36:59.379 +03:00 [INF] Route matched with {action = "GetAllConfigData", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllConfigData() on controller UrunKatalogProjesi.API.Controllers.ManagementController (UrunKatalogProjesi.API).
+2022-08-22 01:36:59.869 +03:00 [INF] Entity Framework Core 5.0.17 initialized 'ConfigDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-08-22 01:37:13.843 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Name", b."Order"
+FROM "Config".brand AS b
+2022-08-22 01:37:14.062 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name", c."Order"
+FROM "Config".color AS c
+2022-08-22 01:37:17.946 +03:00 [INF] Executing OkObjectResult, writing value of type 'UrunKatalogProjesi.Data.Entities.ResponseEntity'.
+2022-08-22 01:37:17.966 +03:00 [INF] Executed action UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API) in 18583.0407ms
+2022-08-22 01:37:17.966 +03:00 [INF] Executed endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:37:17.970 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0 - 200 591 application/json;+charset=utf-8 18626.8336ms
+2022-08-22 01:42:50.057 +03:00 [INF] Application is starting.
+2022-08-22 01:42:51.286 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:42:52.133 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:42:52.148 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:42:52.216 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:42:52.216 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:42:52.216 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:42:52.216 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:42:52.216 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:42:52.574 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:42:52.574 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:42:52.574 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:42:52.601 +03:00 [INF] Server laptop-3ma4iguv:35576:f210ea08 successfully announced in 348,5736 ms
+2022-08-22 01:42:52.603 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:42:52.610 +03:00 [INF] Server laptop-3ma4iguv:35576:f210ea08 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:42:52.627 +03:00 [INF] 2 servers were removed due to timeout
+2022-08-22 01:42:53.045 +03:00 [INF] Server laptop-3ma4iguv:35576:f210ea08 all the dispatchers started
+2022-08-22 01:42:53.206 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 603.8266ms
+2022-08-22 01:42:53.373 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:42:53.500 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 126.3924ms
+2022-08-22 01:42:59.681 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0
+2022-08-22 01:42:59.688 +03:00 [INF] Executing endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:42:59.714 +03:00 [INF] Route matched with {action = "GetAllConfigData", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllConfigData() on controller UrunKatalogProjesi.API.Controllers.ManagementController (UrunKatalogProjesi.API).
+2022-08-22 01:43:00.199 +03:00 [INF] Entity Framework Core 5.0.17 initialized 'ConfigDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-08-22 01:43:00.461 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Name", b."Order"
+FROM "Config".brand AS b
+2022-08-22 01:43:00.474 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name", c."Order"
+FROM "Config".color AS c
+2022-08-22 01:43:02.398 +03:00 [INF] Executing OkObjectResult, writing value of type 'UrunKatalogProjesi.Data.Entities.ResponseEntity'.
+2022-08-22 01:43:02.421 +03:00 [INF] Executed action UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API) in 2702.6285ms
+2022-08-22 01:43:02.421 +03:00 [INF] Executed endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:43:02.426 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0 - 200 677 application/json;+charset=utf-8 2744.5357ms
+2022-08-22 01:44:22.939 +03:00 [INF] Application is starting.
+2022-08-22 01:44:24.027 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 01:44:24.703 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 01:44:24.721 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 01:44:24.781 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 01:44:24.781 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 01:44:24.782 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 01:44:24.782 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 01:44:24.782 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 01:44:25.123 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 01:44:25.126 +03:00 [INF] Hosting environment: Development
+2022-08-22 01:44:25.126 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 01:44:25.148 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 01:44:25.156 +03:00 [INF] Server laptop-3ma4iguv:14812:2ba71613 successfully announced in 348,95 ms
+2022-08-22 01:44:25.162 +03:00 [INF] Server laptop-3ma4iguv:14812:2ba71613 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 01:44:25.612 +03:00 [INF] Server laptop-3ma4iguv:14812:2ba71613 all the dispatchers started
+2022-08-22 01:44:25.762 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 613.9089ms
+2022-08-22 01:44:25.935 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 01:44:26.059 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 124.4915ms
+2022-08-22 01:44:30.032 +03:00 [INF] Request starting HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0
+2022-08-22 01:44:30.036 +03:00 [INF] Executing endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:44:30.062 +03:00 [INF] Route matched with {action = "GetAllConfigData", controller = "Management"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllConfigData() on controller UrunKatalogProjesi.API.Controllers.ManagementController (UrunKatalogProjesi.API).
+2022-08-22 01:44:30.542 +03:00 [INF] Entity Framework Core 5.0.17 initialized 'ConfigDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL' with options: None
+2022-08-22 01:44:30.802 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT b."Id", b."Name", b."Order"
+FROM "Config".brand AS b
+2022-08-22 01:44:30.819 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT c."Id", c."Name", c."Order"
+FROM "Config".color AS c
+2022-08-22 01:44:30.827 +03:00 [INF] Executing OkObjectResult, writing value of type 'UrunKatalogProjesi.Data.Entities.ResponseEntity'.
+2022-08-22 01:44:30.853 +03:00 [INF] Executed action UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API) in 787.1809ms
+2022-08-22 01:44:30.853 +03:00 [INF] Executed endpoint 'UrunKatalogProjesi.API.Controllers.ManagementController.GetAllConfigData (UrunKatalogProjesi.API)'
+2022-08-22 01:44:30.857 +03:00 [INF] Request finished HTTP/2 POST https://localhost:44300/api/Management/GetAllConfigData - 0 - 200 756 application/json;+charset=utf-8 824.9659ms
+2022-08-22 02:15:36.715 +03:00 [INF] Application is starting.
+2022-08-22 02:15:38.009 +03:00 [INF] User profile is available. Using 'C:\Users\karak\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-22 02:15:38.807 +03:00 [INF] Start installing Hangfire SQL objects...
+2022-08-22 02:15:38.824 +03:00 [INF] Hangfire SQL objects installed.
+2022-08-22 02:15:38.892 +03:00 [INF] Starting Hangfire Server using job storage: 'PostgreSQL Server: Host: localhost, DB: UrunKatalogProjesi, Schema: hangfire'
+2022-08-22 02:15:38.892 +03:00 [INF] Using the following options for SQL Server job storage:
+2022-08-22 02:15:38.892 +03:00 [INF]     Queue poll interval: 00:00:15.
+2022-08-22 02:15:38.892 +03:00 [INF]     Invisibility timeout: 00:30:00.
+2022-08-22 02:15:38.892 +03:00 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-08-22 02:15:39.301 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-08-22 02:15:39.307 +03:00 [INF] Hosting environment: Development
+2022-08-22 02:15:39.307 +03:00 [INF] Content root path: C:\Users\karak\Documents\GitHub\bitirme-projesi-mertkrkya\Bitirme-Projesi-mertkrkya\UrunKatalogProjesi.API
+2022-08-22 02:15:39.334 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/index.html - -
+2022-08-22 02:15:39.342 +03:00 [INF] Server laptop-3ma4iguv:35128:166b0975 successfully announced in 403,4238 ms
+2022-08-22 02:15:39.350 +03:00 [INF] Server laptop-3ma4iguv:35128:166b0975 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-08-22 02:15:39.362 +03:00 [INF] 2 servers were removed due to timeout
+2022-08-22 02:15:39.822 +03:00 [INF] Server laptop-3ma4iguv:35128:166b0975 all the dispatchers started
+2022-08-22 02:15:39.966 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/index.html - - - 200 - text/html;charset=utf-8 631.8802ms
+2022-08-22 02:15:40.153 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - -
+2022-08-22 02:15:40.296 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44300/swagger/UrunKatalogProject/swagger.json - - - 200 - application/json;charset=utf-8 143.0231ms

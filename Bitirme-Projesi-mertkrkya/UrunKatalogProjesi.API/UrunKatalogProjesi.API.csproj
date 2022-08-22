@@ -19,11 +19,18 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Identity.Web" Version="1.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\UrunKatalogProjesi.Service\UrunKatalogProjesi.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Files\Logs\" />
   </ItemGroup>
 
 </Project>

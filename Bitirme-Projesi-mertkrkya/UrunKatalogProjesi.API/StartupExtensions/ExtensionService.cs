@@ -100,6 +100,7 @@ namespace UrunKatalogProjesi.API.StartupExtensions
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IOfferService, OfferService>();
             services.AddScoped<IUnitofWork, UnitOfWork>();
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IBaseService<,>), typeof(BaseService<,>));
@@ -113,10 +114,7 @@ namespace UrunKatalogProjesi.API.StartupExtensions
         }
         public static void CheckFileDirectories(IConfiguration Configuration)
         {
-            var logDirectory = Configuration.GetSection("SystemOptionConfig").GetValue<string>("LogFileDirectory");
             var importPhotoDirectory = Configuration.GetSection("SystemOptionConfig").GetValue<string>("ImportPhotoDirectory");
-            if (!System.IO.Directory.Exists(logDirectory))
-                System.IO.Directory.CreateDirectory(logDirectory);
             if (!System.IO.Directory.Exists(importPhotoDirectory))
                 System.IO.Directory.CreateDirectory(importPhotoDirectory);
         }

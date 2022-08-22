@@ -16,7 +16,9 @@ namespace UrunKatalogProjesi.Data.Entities
         Welcome = 1,
         Block = 2,
         Sold = 3,
-        UnOffer = 4
+        UnOffer = 4,
+        AcceptOffer = 5,
+        RejectOffer = 6
     }
     public enum CategoryStatuses : int
     {
@@ -27,7 +29,8 @@ namespace UrunKatalogProjesi.Data.Entities
     {
         Wait = 1,
         Accept = 2,
-        Reject = 3
+        Reject = 3,
+        Cancel = 4
     }
     public enum ProductStatuses : int
     {

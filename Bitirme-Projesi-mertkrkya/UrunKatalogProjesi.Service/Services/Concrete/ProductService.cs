@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using UrunKatalogProjesi.Data.Dto;
@@ -60,10 +61,8 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
             try
             {
                 var tempEntity = _mapper.Map<ProductDto, Product>(entity);
-                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
-                if (currentUser == null)
-                    return new ResponseEntity("User cannot be null");
-                var userId = currentUser.Value;
+                var currentUser = _httpContextAccessor.HttpContext.User;
+                var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
                 tempEntity.CreatedBy = userId;
                 tempEntity.OwnerId = userId;
                 var result = _productRepository.InsertAsync(tempEntity);
@@ -85,10 +84,8 @@ namespace UrunKatalogProjesi.Service.Services.Concrete
                     throw new ClientException("No Product Data");
                 }
                 var tempEntity = _mapper.Map<ProductDto, Product>(entity);
-                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
-                if (currentUser == null)
-                    return new ResponseEntity("User cannot be null");
-                var userId = currentUser.Value;
+                var currentUser = _httpContextAccessor.HttpContext.User;
+                var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
                 var currentTime = DateTime.UtcNow;
                 tempEntity.Id = unUpdatedEntity.Id;
                 tempEntity.CreatedBy = userId;

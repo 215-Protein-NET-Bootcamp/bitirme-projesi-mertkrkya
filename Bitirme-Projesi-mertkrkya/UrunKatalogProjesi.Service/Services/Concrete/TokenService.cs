@@ -56,16 +56,13 @@ namespace UrunKatalogProjesi.Service.Services
 
         private IEnumerable<Claim> GetClaims(AppUser appUser)
         {
-            string name = "";
-            if (!string.IsNullOrWhiteSpace(appUser.FirstName) && !string.IsNullOrWhiteSpace(appUser.LastName))
-                name = appUser.FirstName + " " + appUser.LastName;
             string phoneNumber = "";
             if (!string.IsNullOrWhiteSpace(appUser.PhoneNumber))
                 phoneNumber = appUser.PhoneNumber;
             var claimList = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, appUser.Id.ToString()),
-                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Name, appUser.UserName),
                 new Claim(ClaimTypes.Email, appUser.Email),
                 new Claim(ClaimTypes.MobilePhone, phoneNumber),
                 new Claim("UserId", appUser.Id.ToString())

@@ -9,9 +9,9 @@ namespace UrunKatalogProjesi.BackgroundJob.Jobs
     {
 
         [AutomaticRetry(Attempts = 5,DelaysInSeconds = new int[] {60})]
-        public static void EmailSendJob(EmailTypes emailType, AppUser appUser, object mailData = null)
+        public static void EmailSendJob(EmailTypes emailType, string username, string email , object mailData = null)
         {
-            Hangfire.BackgroundJob.Enqueue<IEmailSender>(x => x.SendEmail(emailType, appUser, mailData));
+            Hangfire.BackgroundJob.Enqueue<IEmailSender>(x => x.SendEmail(emailType, username, email, mailData));
         }
     }
 }

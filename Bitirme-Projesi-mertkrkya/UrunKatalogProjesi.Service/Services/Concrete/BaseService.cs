@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using UrunKatalogProjesi.Data.Models;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using System.Security.Claims;
 
 namespace UrunKatalogProjesi.Service.Services
 {
@@ -18,7 +19,7 @@ namespace UrunKatalogProjesi.Service.Services
         private readonly IBaseRepository<TEntity> _repository;
         private readonly IUnitofWork _unitofWork;
         protected readonly IMapper _mapper;
-        private IHttpContextAccessor _httpContextAccessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
         public BaseService(IBaseRepository<TEntity> repository, IUnitofWork unitofWork, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base()
         {
             _repository = repository;
@@ -59,10 +60,8 @@ namespace UrunKatalogProjesi.Service.Services
             try
             {
                 var tempEntity = _mapper.Map<Dto, TEntity>(entity);
-                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
-                if(currentUser == null)
-                    return new ResponseEntity("User cannot be null");
-                var userId = currentUser.Value;
+                var currentUser = _httpContextAccessor.HttpContext.User;
+                var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
                 var property = tempEntity.GetType().GetProperty("CreatedBy");
                 if (property != null)
                     property.SetValue(tempEntity, userId, null);
@@ -86,10 +85,8 @@ namespace UrunKatalogProjesi.Service.Services
                     throw new ClientException("No Data");
                 }
                 var tempEntity = _mapper.Map<Dto, TEntity>(entity);
-                var currentUser = _httpContextAccessor.HttpContext.User.Claims.Where(r => r.Type == "UserId").FirstOrDefault();
-                if (currentUser == null)
-                    return new ResponseEntity("User cannot be null");
-                var userId = currentUser.Value;
+                var currentUser = _httpContextAccessor.HttpContext.User;
+                var userId = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
                 tempEntity.GetType().GetProperty("Id").SetValue(tempEntity, id);
                 var tempProperty = unUpdatedEntity.GetType().GetProperty("CreatedBy");
                 var tempPropertyDate = unUpdatedEntity.GetType().GetProperty("CreatedDate");

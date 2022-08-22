@@ -10,6 +10,6 @@ namespace UrunKatalogProjesi.BackgroundJob.Services.Abstract
 {
     public interface IEmailSender
     {
-        Task SendEmail(EmailTypes emailType, AppUser appUser, object mailData = null);
+        Task SendEmail(EmailTypes emailType, string username, string email, object mailData = null);
     }
 }

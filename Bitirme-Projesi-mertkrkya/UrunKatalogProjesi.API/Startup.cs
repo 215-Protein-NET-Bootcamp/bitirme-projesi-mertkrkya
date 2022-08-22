@@ -1,12 +1,13 @@
+using Hangfire;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using UrunKatalogProjesi.API.Filters;
 using UrunKatalogProjesi.API.Middleware;
 using UrunKatalogProjesi.API.StartupExtensions;
-using Hangfire;
 
 namespace UrunKatalogProjesi.API
 {
@@ -28,6 +29,7 @@ namespace UrunKatalogProjesi.API
             services.AddValidations();
             services.AddCustomizeSwagger();
             ExtensionService.CheckFileDirectories(Configuration); //Sunucu her ayaða kalktýðý zaman dosyalarýn varlýðýný kontrol eder. Dosyalar yoksa oluþturur.
+            services.AddMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

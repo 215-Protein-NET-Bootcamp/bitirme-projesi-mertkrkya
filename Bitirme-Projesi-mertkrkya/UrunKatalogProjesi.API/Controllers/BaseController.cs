@@ -22,7 +22,6 @@ namespace UrunKatalogProjesi.Controllers
                 return BadRequest(result);
             if (result.data == null)
                 return NoContent();
-
             return Ok(result);
         }
         [NonAction]
@@ -45,7 +44,10 @@ namespace UrunKatalogProjesi.Controllers
             var result = await _baseService.InsertAsync(entity);
 
             if (result.isSuccess)
+            {
                 return StatusCode(201, result);
+            }
+
 
             return BadRequest(result);
         }
@@ -56,7 +58,9 @@ namespace UrunKatalogProjesi.Controllers
             var result = await _baseService.UpdateAsync(id, entity);
 
             if (result.isSuccess)
+            {
                 return Ok(result);
+            }
 
             return BadRequest(result);
         }
@@ -67,7 +71,9 @@ namespace UrunKatalogProjesi.Controllers
             var result = await _baseService.DeleteAsync(id);
 
             if (result.isSuccess)
+            {
                 return Ok(result);
+            }
 
             return BadRequest(result);
         }

@@ -12,5 +12,6 @@ namespace UrunKatalogProjesi.Service.Services.Abstract
     public interface IManagementService
     {
         Task<ResponseEntity> UploadPhoto([FromForm] IFormFile image);
+        Task<ResponseEntity> GetAllConfigData();
     }
 }

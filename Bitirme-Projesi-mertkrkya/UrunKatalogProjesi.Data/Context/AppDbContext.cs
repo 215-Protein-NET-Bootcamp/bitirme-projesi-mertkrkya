@@ -69,21 +69,13 @@ namespace UrunKatalogProjesi.Data.Context
             {
                 entity.HasKey(r => r.Id).HasName("PK_OfferId");
                 entity.Property(r => r.Id).UseIdentityColumn().ValueGeneratedOnAdd();
+                entity.Property(r => r.OfferPrice).IsRequired().HasColumnType("decimal(18,2)");
+                entity.Property(r => r.OfferPercent).IsRequired().HasColumnType("decimal(4,2)");
+                entity.Property(r => r.CreatedBy).IsRequired();
+                entity.Property(r => r.CreatedDate).IsRequired();
                 entity.HasOne(r => r.ProductParentNavigation).WithMany(r => r.Offers).HasForeignKey(r => r.ProductId).OnDelete(DeleteBehavior.Cascade);
                 entity.HasOne(r => r.UserParentNavigation).WithMany(r => r.Offers).HasForeignKey(r => r.OfferUserId).OnDelete(DeleteBehavior.Cascade);
                 entity.ToTable("offer");
-            });
-            modelBuilder.Entity<Brand>(entity =>
-            {
-                entity.HasKey(r => r.Id).HasName("PK_BrandId");
-                entity.Property(r => r.Name).IsRequired().HasMaxLength(128);
-                entity.ToTable("brand");
-            });
-            modelBuilder.Entity<Color>(entity =>
-            {
-                entity.HasKey(r => r.Id).HasName("PK_ColorId");
-                entity.Property(r => r.Name).IsRequired().HasMaxLength(128);
-                entity.ToTable("color");
             });
         }
     }

@@ -10,6 +10,7 @@ namespace UrunKatalogProjesi.Data.Dto
 {
     public class ProductDto
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
@@ -19,9 +20,11 @@ namespace UrunKatalogProjesi.Data.Dto
         public ProductStatuses ProductStatus { get; set; }
         public decimal Price { get; set; }
         public bool isOfferable { get; set; } = false;
+        public bool isSold { get; set; } = false;
     }
     public class DetailProductDto
     {
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
         public int CategoryId { get; set; }
@@ -31,6 +34,8 @@ namespace UrunKatalogProjesi.Data.Dto
         public ProductStatuses ProductStatus { get; set; }
         public decimal Price { get; set; }
         public bool isOfferable { get; set; } = false;
+        public bool isSold { get; set; } = false;
+        public string OwnerId { get; set; }
         public ICollection<OfferDto> Offers { get; set; }
     }
 }

@@ -7,6 +7,8 @@ using UrunKatalogProjesi.Data.Models;
 using UrunKatalogProjesi.Data.Dto;
 using UrunKatalogProjesi.Service.Services;
 using UrunKatalogProjesi.BackgroundJob.Jobs;
+using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace UrunKatalogProjesi.API.Controllers
 {
@@ -31,6 +33,7 @@ namespace UrunKatalogProjesi.API.Controllers
         {
             if (ModelState.IsValid)
             {
+                Log.Information("Giris yapti.");
                 var result = await _accountService.LoginProcess(loginRequest);
                 if (!result.isSuccess)
                 {
@@ -66,7 +69,7 @@ namespace UrunKatalogProjesi.API.Controllers
                     var result = await _authenticationService.CreateTokenAsync(user);
                     if (!result.isSuccess)
                         return BadRequest(result);
-                    FireAndForgetJobs.EmailSendJob(EmailTypes.Welcome, user);
+                    FireAndForgetJobs.EmailSendJob(EmailTypes.Welcome, user.UserName, user.Email);
                     return Ok(result);
                 }
                 return BadRequest(new ResponseEntity(registerUser.Errors.ErrorToString()));
