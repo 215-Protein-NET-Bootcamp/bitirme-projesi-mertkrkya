@@ -22,7 +22,7 @@
 - Projede veritabanı, dosya yolu, e-mail servisi ve projede kullanılan opsiyonel özellik ayarlamaları appsettings.json üzerinden güncelleştirilebilir.
 - Proje SMTP servisi olarak office365 ile denenmiş ve başarılı bir sonuç alınmıştır.
 - Veritabanları codefirst yaklaşımı ile oluşturulmuştur. AppDbContext ve ConfigDbContext olmak üzere iki adet context dosyası bulunmaktadır.
-- Veritabanı, Packet Manager Console ile UrunKatalogProjesi.Data projesi seçilerek migration yöntemi kullanılarak oluşturulabilir. Projeye ilişkin migration kodları aşağıda verilmiştir.
+- Veritabanı, Package Manager Console ile UrunKatalogProjesi.Data projesi seçilerek migration yöntemi kullanılarak oluşturulabilir. Projeye ilişkin migration kodları aşağıda verilmiştir.
 ```
 add-migration initial -context AppDbContext
 update-database -context AppDbContext
