@@ -1,7 +1,7 @@
 # Mert Karakaya - Bitirme Projesi
 
 ## Projede Kullanılan Teknolojiler ve Patternler
-- .NET Core 5.0
+- .NET 5.0
 - Fluent Validation
 - Migration
 - Entity Framework Core
