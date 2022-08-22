@@ -19,7 +19,7 @@
 - Projeye ilişkin [Postman dokümanına](https://documenter.getpostman.com/view/16058133/VUqptcxm) bu linkte bulabilirsiniz.
 - API projesi IIS Express ile çalıştırılarak proje başlatılır.
 - Proje çalıştırıldığı zaman Swagger dokümanı açılacaktır.
-- Projede veritabanı, dosya yolu, e-mail servis, ve projede kullanılan opsiyonel özellik ayarlamaları appsettings.json üzerinden güncelleştirilebilir.
+- Projede veritabanı, dosya yolu, e-mail servisi ve projede kullanılan opsiyonel özellik ayarlamaları appsettings.json üzerinden güncelleştirilebilir.
 - Proje SMTP servisi olarak office365 ile denenmiş ve başarılı bir sonuç alınmıştır.
 - Veritabanları codefirst yaklaşımı ile oluşturulmuştur. AppDbContext ve ConfigDbContext olmak üzere iki adet context dosyası bulunmaktadır.
 - Migration yöntemi kullanılarak;
