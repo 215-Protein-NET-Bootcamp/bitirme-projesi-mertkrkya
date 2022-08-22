@@ -16,7 +16,7 @@
 - Options Pattern
 
 ## Projeyi çalıştırmak
-- Projeye ilişkin [Postman dokümanını](https://documenter.getpostman.com/view/16058133/VUqptcxm) bu linkte bulabilirsiniz.
+- Projeye ilişkin [Postman dokümanına](https://documenter.getpostman.com/view/16058133/VUqptcxm) bu linkte bulabilirsiniz.
 - API projesi IIS Express ile çalıştırılarak proje başlatılır.
 - Proje çalıştırıldığı zaman Swagger dokümanı açılacaktır.
 - Projede veritabanı, dosya yolu, e-mail servis, ve projede kullanılan opsiyonel özellik ayarlamaları appsettings.json üzerinden güncelleştirilebilir.
